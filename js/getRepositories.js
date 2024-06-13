@@ -1,4 +1,4 @@
-const path_img = './images/';
+const path_img = '../images/';
 
 const porjects_link = 'https://mohammaddebsawi.github.io/';
 
