@@ -5,7 +5,7 @@ const porjects_link = 'https://mohammaddebsawi.github.io/';
 const repositories_link = 'https://github.com/MohammadDebsawi/'
 
 async function showRepositories() {
-  const projects = await fetch('./js/projects.json');
+  const projects = await fetch('../js/projects.json');
   const container = document.querySelector('.container');
   container.innerHTML = '';
   projects.forEach(project => {
