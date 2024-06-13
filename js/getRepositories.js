@@ -23,9 +23,9 @@ async function showRepositories() {
           </div>
           <div class="buttons">
             <button>
-              <a href="${repositories_link + project.name}" class="btn">زيارة المستودع</a>
+              <a target="_blank" href="${repositories_link + project.name}" class="btn">زيارة المستودع</a>
             </button>
-            <button><a href="${porjects_link + project.name + project.main}" class="btn">تجربة</a></button>
+            <button><a target="_blank" href="${porjects_link + project.name + project.main}" class="btn">تجربة</a></button>
           </div>
         </div>
     `
