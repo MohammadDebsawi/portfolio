@@ -1,43 +1,30 @@
-// get repositories
-async function getRepositories() {
-  const repositories = await fetch(
-    "https://github.com/MohammadDebsawi?tab=repositories"
-  );
-  let data = await repositories.text();
-  data = data.substring(data.indexOf("<body"), data.indexOf("</body>") + 6);
-  const ifr = document.createElement("iframe");
-  document.body.appendChild(ifr);
-  ifr.contentDocument.body.innerHTML = data;
-  ifr.style.display = "none";
-  return [...ifr.contentDocument.querySelectorAll("a")].filter((i) =>
-    i.href.startsWith("https://github.com/MohammadDebsawi/")
-  );
-}
+const path_img = './images/';
 
-// show repositories
+const porjects_link = 'https://mohammaddebsawi.github.io/';
+
+const repositories_link = 'https://github.com/MohammadDebsawi/'
 
 async function showRepositories() {
-  const repo = await getRepositories();
+  const projects = await fetch('./js/projects.json');
   const container = document.querySelector('.container');
   container.innerHTML = '';
-  repo.forEach(i => {
+  projects.forEach(project => {
     container.innerHTML += `
         <div class="porject-card">
           <div class="img">
-            <img src="../images/project1.jpg" alt="" />
+            <img src="${path_img+project.img}" alt="" />
           </div>
           <div class="content">
-            <h1>مشروع 1</h1>
+            <h1>${project.name}</h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-              quaerat quibusdam quo, quasi, quia, quas quia.
+            ${project.description}
             </p>
           </div>
           <div class="buttons">
             <button>
-              <a href="https://github.com/MohammadDebsawi/${i}" class="btn">زيارة المستودع</a>
+              <a href="${repositories_link + project.name}" class="btn">زيارة المستودع</a>
             </button>
-            <button><a href="" class="btn">تجربة</a></button>
+            <button><a href="${porjects_link + project.name + project.main}" class="btn">تجربة</a></button>
           </div>
         </div>
     `
