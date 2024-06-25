@@ -4,5 +4,11 @@
     "main": "/html/home.html",
     "img": "project1.jpg",
     "description": "موقع الذي اعرض فيه مشاريعي وهو هذا الموقع في الوقع"
+  },
+  {
+    "name":"lockPuzzle",
+    "main":"/html.html",
+    "img":"lockPuzzle.jpg",
+    "description":"هو تبطبيق بسيط يقوم بحل لغز القفل المشهور بحيث تقوم بوضع الشروط ويقوم التطبيق بحل اللغز بشكل مباشر"
   }
 ]
